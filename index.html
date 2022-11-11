@@ -24,10 +24,10 @@
             data = response;
             $( "div.output1" ).html("");
             $( "div.output1" )
-                .append(data[0].comName + " , " + data[0].howMany + "<br />");
+                .append(data[0].comName + " , " + data[0].howMany + " , " + data[0].obsDt +"<br />");
             for(i = 1; i < data.length; i++) {
                 $( "div.output1" )
-                    .append(data[i].comName + " , " + data[i].howMany+"<br />");
+                    .append(data[i].comName + " , " + data[i].howMany + " , " + data[0].obsDt +"<br />");
             }
             $( "div.output1" ).css("font-family", "Times New Roman");
 
