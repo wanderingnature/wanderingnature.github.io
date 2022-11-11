@@ -6,5 +6,35 @@
 </head>
 <body>
 <h1>eBird API Site</h1>
+<h2>Test</h2>
+<script>
+
+    function getallbirds(days) {
+        var settings = {
+            "url": "https://api.ebird.org/v2/data/obs/L17274411/recent?&back=7&sort=species",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "X-eBirdApiToken": "kn95lrnscr98"
+            },
+        };
+        var data = {}
+        $.ajax(settings).done(function (response) {
+            data = response;
+            $( "div.test" ).html("");
+            $( "div.test" )
+                .append(data[0].comName + "<br />");
+            for(i = 1; i < data.length; i++) {
+                $( "div.test" )
+                    .append(data[i].comName+"<br />");
+            }
+            $( "div.test" ).css("font-family", "Times New Roman");
+            $( "div.test" ).css("padding-left", "30px");
+
+        }); }
+
+
+    getallbirds(7);
+</script>
 </body>
 </html>
