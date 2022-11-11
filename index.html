@@ -53,10 +53,10 @@
             data = response;
             $( "div.output2" ).html("");
             $( "div.output2" )
-                .append(data[0].comName + " , " + data[0].howMany + "<br />");
+                .append(data[0].comName + " , " + data[0].howMany + " , " + data[0].obsDt +"<br />");
             for(i = 1; i < data.length; i++) {
                 $( "div.output2" )
-                    .append(data[i].comName + " , " + data[i].howMany+"<br />");
+                    .append(data[i].comName + " , " + data[i].howMany + " , " + data[1].obsDt+"<br />");
             }
             $( "div.output2" ).css("font-family", "Times New Roman");
 
