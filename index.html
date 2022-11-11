@@ -8,9 +8,11 @@
 <h1>eBird API Site</h1>
 <h2>Test</h2>
 <div class = "output"></div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
 <script>
 
-    function getallbirds(days) {
+    function getallbirds() {
         var settings = {
             "url": "https://api.ebird.org/v2/data/obs/L17274411/recent?&back=7&sort=species",
             "method": "GET",
@@ -34,7 +36,7 @@
         }); }
 
 
-    getallbirds(7);
+    getallbirds();
 </script>
 </body>
 </html>
