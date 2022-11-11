@@ -22,15 +22,14 @@
         var data = {}
         $.ajax(settings).done(function (response) {
             data = response;
-            $( "div.test" ).html("");
-            $( "div.test" )
+            $( "div.output" ).html("");
+            $( "div.output" )
                 .append(data[0].comName + "<br />");
             for(i = 1; i < data.length; i++) {
-                $( "div.test" )
+                $( "div.output" )
                     .append(data[i].comName+"<br />");
             }
-            $( "div.test" ).css("font-family", "Times New Roman");
-            $( "div.test" ).css("padding-left", "30px");
+            $( "div.output" ).css("font-family", "Times New Roman");
 
         }); }
 
