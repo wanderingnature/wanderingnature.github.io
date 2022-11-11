@@ -26,10 +26,10 @@
             data = response;
             $( "div.output" ).html("");
             $( "div.output" )
-                .append(data[0].comName + "<br />");
+                .append(data[0].comName + " , " + data[0].howMany + "<br />");
             for(i = 1; i < data.length; i++) {
                 $( "div.output" )
-                    .append(data[i].comName+"<br />");
+                    .append(data[i].comName + " , " + data[i].howMany+"<br />");
             }
             $( "div.output" ).css("font-family", "Times New Roman");
 
