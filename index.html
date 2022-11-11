@@ -5,16 +5,14 @@
     <title>Wandering Birds</title>
 </head>
 <body>
-<h1>eBird API Site</h1>
-<h2>Test</h2>
-<div class = "output"></div>
+<h1>eBird API Hotspot Check</h1>
+<h2> King's Bridge Conservation Area</h2>
+<div class = "output1"></div>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
-
 <script>
-
     function getallbirds() {
         var settings = {
-            "url": "https://api.ebird.org/v2/data/obs/L17274411/recent?&back=7&sort=species",
+            "url": "https://api.ebird.org/v2/data/obs/L17274411/recent?&back=5&sort=species",
             "method": "GET",
             "timeout": 0,
             "headers": {
@@ -24,19 +22,47 @@
         var data = {}
         $.ajax(settings).done(function (response) {
             data = response;
-            $( "div.output" ).html("");
-            $( "div.output" )
+            $( "div.output1" ).html("");
+            $( "div.output1" )
                 .append(data[0].comName + " , " + data[0].howMany + "<br />");
             for(i = 1; i < data.length; i++) {
-                $( "div.output" )
+                $( "div.output1" )
                     .append(data[i].comName + " , " + data[i].howMany+"<br />");
             }
-            $( "div.output" ).css("font-family", "Times New Roman");
+            $( "div.output1" ).css("font-family", "Times New Roman");
 
         }); }
-
-
     getallbirds();
 </script>
+<br />
+<hr />
+<h2> Hooper Lane</h2>
+<div class = "output2"></div>
+<script>
+    function getallbirds2() {
+        var settings = {
+            "url": "https://api.ebird.org/v2/data/obs/L870227/recent?&back=5&sort=species",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "X-eBirdApiToken": "kn95lrnscr98"
+            },
+        };
+        var data = {}
+        $.ajax(settings).done(function (response) {
+            data = response;
+            $( "div.output2" ).html("");
+            $( "div.output2" )
+                .append(data[0].comName + " , " + data[0].howMany + "<br />");
+            for(i = 1; i < data.length; i++) {
+                $( "div.output2" )
+                    .append(data[i].comName + " , " + data[i].howMany+"<br />");
+            }
+            $( "div.output2" ).css("font-family", "Times New Roman");
+
+        }); }
+    getallbirds2();
+</script>
+
 </body>
 </html>
