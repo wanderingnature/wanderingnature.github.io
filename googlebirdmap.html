@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps with Birds</title>
+</head>
+<body>
+<div class = "output1"></div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<script>
+    function getallbirds() {
+        var settings = {
+            "url": "https://api.ebird.org/v2/data/obs/geo/recent?lat=35.8316&lng=-75.8578&sort=date&dist=30&back=3&includeProvisional=true",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "X-eBirdApiToken": "kn95lrnscr98"
+            },
+        };
+        var data = {}
+        $.ajax(settings).done(function (response) {
+            data = response;
+            $( "div.output1" ).html("");
+            $( "div.output1" )
+                .append(data[0].comName + " , " + data[0].howMany + " , " + data[0].obsDt +"<br />");
+            for(i = 1; i < data.length; i++) {
+                $( "div.output1" )
+                    .append(data[i].comName + " , " + data[i].howMany + " , " + data[i].obsDt +"<br />");
+            }
+            $( "div.output1" ).css("font-family", "Times New Roman");
+
+        }); }
+    getallbirds();
+</script>
+</body>
+</html>
